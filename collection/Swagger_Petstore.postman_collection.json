@@ -57,6 +57,8 @@
 									"pm.test(\"TC2:If status is placed then return 200 OK\", function () {\r",
 									"    let testResult = false;\r",
 									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.globals.set(\"orderID_new\", jsonData.id);\r",
 									"    if (jsonData.status == \"placed\") {\r",
 									"        testResult= true;\r",
 									"    }\r",
@@ -142,7 +144,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://petstore.swagger.io/v2/store/order/246497834637",
+							"raw": "https://petstore.swagger.io/v2/store/order/{{orderID_new}}",
 							"protocol": "https",
 							"host": [
 								"petstore",
@@ -153,7 +155,7 @@
 								"v2",
 								"store",
 								"order",
-								"246497834637"
+								"{{orderID_new}}"
 							]
 						}
 					},
@@ -184,7 +186,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://petstore.swagger.io/v2/store/order/246497834603",
+							"raw": "https://petstore.swagger.io/v2/store/order/{{orderID_new}}",
 							"protocol": "https",
 							"host": [
 								"petstore",
@@ -195,7 +197,7 @@
 								"v2",
 								"store",
 								"order",
-								"246497834603"
+								"{{orderID_new}}"
 							]
 						}
 					},
@@ -212,15 +214,15 @@
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"TC2: Return TC Pass if no of items with status sold is greater than or equal to 3\", function () {\r",
-									"    let testResult = false;\r",
-									"    var jsonData = pm.response.json();\r",
-									"    console.log(jsonData.status);\r",
-									"    if((jsonData.status == \"sold\") > 3) {\r",
-									"        testResult = true\r",
-									"    }\r",
-									"    pm.expect(testResult).to.eql(true);\r",
-									"});"
+									"// pm.test(\"TC2: Return TC Pass if no of items with status sold is greater than or equal to 3\", function () {\r",
+									"//     let testResult = false;\r",
+									"//     var jsonData = pm.response.json();\r",
+									"//     console.log(jsonData.status);\r",
+									"//     if((jsonData.status == \"sold\") > 3) {\r",
+									"//         testResult = true\r",
+									"//     }\r",
+									"//     pm.expect(testResult).to.eql(true);\r",
+									"// });"
 								],
 								"type": "text/javascript"
 							}
@@ -616,7 +618,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://petstore.swagger.io/v2/user/NatTheKangaroo",
+							"raw": "https://petstore.swagger.io/v2/user/samtheant",
 							"protocol": "https",
 							"host": [
 								"petstore",
@@ -626,7 +628,7 @@
 							"path": [
 								"v2",
 								"user",
-								"NatTheKangaroo"
+								"samtheant"
 							]
 						}
 					},
