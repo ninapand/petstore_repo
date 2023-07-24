@@ -19,18 +19,14 @@ stage('run Test newman') {
               //sh 'chmod +x runTest.sh'
               //sh 'newman run collection/Swagger_Petstore_slacknotifi_final.postman_collection.json -d data/petstore_order.csv -e data/qa.postman_environment.json'
               sh './runTest.sh'
-publishHTML target: [
-            allowMissing: false,
-            alwaysLinkToLastBuild: false,
-            keepAll: true,
-            reportDir: '.',
-            reportFiles: 'newman_result.html',
-            reportName: 'Newman HTML Reporter'
-    ]  
+           }
+}
+   }
+
+              post {
+        always {
+            archiveArtifacts artifacts: 'newman/newman_result.html', fingerprint: true
+        }  
 
            }
-            
-           }
-           
-}
 }
