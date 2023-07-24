@@ -24,7 +24,7 @@ stage('run Test newman') {
 
 stage ('generate report') {
     steps {
-        sh 'newman run newman/newman_report.html'
+        sh 'newman run newman/*.html'
     }
 }
 }
