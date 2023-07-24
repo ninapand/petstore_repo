@@ -21,7 +21,13 @@ stage('run Test newman') {
               sh './runTest.sh'
            }
 }
-   }
+
+/*stage ('generate report') {
+    steps {
+        sh 'newman run newman/newman_report.html'
+    }
+}*/
+}
 
               post {
         always {
