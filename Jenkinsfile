@@ -22,17 +22,17 @@ stage('run Test newman') {
            }
 }
 
-/*stage ('generate report') {
+stage ('generate report') {
     steps {
         sh 'newman run newman/newman_report.html'
     }
-}*/
 }
-
+}
+/*
               post {
         always {
-            archiveArtifacts artifacts: 'newman/*.html', fingerprint: true
+            archiveArtifacts artifacts: 'newman/newman_report.html', fingerprint: true
         }  
 
-           }
+           }*/
 }
