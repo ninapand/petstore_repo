@@ -33,7 +33,7 @@ stage('run Test newman') {
 
               post {
         always {
-            archiveArtifacts artifacts: 'newman/*.html', fingerprint: true
+            archiveArtifacts artifacts: 'newman/newman_result.html', fingerprint: true
         }  
 
            }
