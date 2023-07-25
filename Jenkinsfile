@@ -22,11 +22,12 @@ stage('run Test newman') {
            }
 }
 
-stage ('generate report') {
+/*stage ('generate report') {
     steps {
         sh 'newman run newman/*.html'
+
     }
-}
+} */
 }
 /*
               post {
