@@ -29,11 +29,11 @@ stage('run Test newman') {
     }
 } */
 }
-/*
+
               post {
         always {
             archiveArtifacts artifacts: 'newman/newman_report.html', fingerprint: true
         }  
 
-           }*/
+           }
 }
