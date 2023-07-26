@@ -1,0 +1,19 @@
+version: 2
+
+jobs:
+ npm & node ver:
+  steps:
+  - checkout
+  - run: export PATH=/usr/local/bin:/bin
+  - run: npm version
+  - run: node -v
+
+workflows:
+version: 2
+full_workflow:
+  jobs:
+    - npm & node ver
+
+
+
+
